@@ -354,3 +354,4 @@ function Finder() {
     </div>
   );
 }
+export default Finder;
