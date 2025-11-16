@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Dock({ onOpenApp }) {
+function Dock({ onOpenApp, onToggleLaunchpad }) {
   const apps = [
     'finder',
     'safari',
@@ -17,6 +17,9 @@ function Dock({ onOpenApp }) {
           <img src={`/icons/${app}.png`} alt={app} />
         </div>
       ))}
+      <div className="dock-item launchpad-btn" onClick={onToggleLaunchpad}>
+        🚀
+      </div>
     </div>
   );
 }

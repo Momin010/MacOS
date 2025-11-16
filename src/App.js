@@ -9,10 +9,13 @@ import Calculator from './apps/Calculator';
 import Notes from './apps/Notes';
 import Terminal from './apps/Terminal';
 import Settings from './apps/Settings';
+import Launchpad from './components/Launchpad';
+import Mail from './apps/Mail';
 
 function App() {
   const [windows, setWindows] = useState([]);
   const [activeApp, setActiveApp] = useState(null);
+  const [showLaunchpad, setShowLaunchpad] = useState(false);
 
   const openApp = (appName) => {
     setActiveApp(appName);
@@ -46,6 +49,8 @@ function App() {
         return <Terminal />;
       case 'settings':
         return <Settings />;
+      case 'mail':
+        return <Mail />;
       default:
         return <div>App not found</div>;
     }
@@ -75,7 +80,7 @@ function App() {
     <div className="App">
       <MenuBar />
       <Desktop onOpenApp={openApp} />
-      <Dock onOpenApp={openApp} />
+      <Dock onOpenApp={openApp} onToggleLaunchpad={() => setShowLaunchpad(!showLaunchpad)} />
       <WindowManager
         windows={windows}
         onClose={closeWindow}
@@ -83,6 +88,12 @@ function App() {
         onMaximize={maximizeWindow}
         onFocus={focusWindow}
       />
+      {showLaunchpad && (
+        <Launchpad
+          onOpenApp={openApp}
+          onClose={() => setShowLaunchpad(false)}
+        />
+      )}
     </div>
   );
 }

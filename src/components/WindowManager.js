@@ -43,8 +43,8 @@ function Window({ window: win, onClose, onMinimize, onMaximize, onFocus }) {
       setIsMaximized(false);
     } else {
       setOriginalBounds({ position, size });
-      setPosition({ x: 0, y: 22 });
-      setSize({ width: window.innerWidth, height: window.innerHeight - 102 });
+      setPosition({ x: 0, y: 0 });
+      setSize({ width: window.innerWidth, height: window.innerHeight });
       setIsMaximized(true);
     }
     onMaximize(win.id);
