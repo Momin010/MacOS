@@ -163,7 +163,7 @@ function Finder() {
   };
 
   const deleteItems = () => {
-    if (selectedItems.length > 0 && confirm(`Delete ${selectedItems.length} items?`)) {
+    if (selectedItems.length > 0 && window.confirm(`Delete ${selectedItems.length} items?`)) {
       // Implement delete logic
       console.log('Deleting:', selectedItems);
       setSelectedItems([]);
