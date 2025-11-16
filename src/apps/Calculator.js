@@ -81,12 +81,74 @@ function Calculator() {
     ['0', '.', '=']
   ];
 
+  const scientificButtons = [
+    ['sin', 'cos', 'tan', 'sqrt'],
+    ['log', 'ln', 'exp', 'x^y'],
+    ['π', 'e', 'n!', '1/x']
+  ];
+
   const handleButton = (value) => {
     if (value === 'AC') clear();
     else if (value === '=') calculate();
     else if (['+', '-', '*', '/'].includes(value)) performOperation(value);
     else if (value === '.') inputDecimal();
+    else if (['sin', 'cos', 'tan', 'sqrt', 'log', 'ln', 'exp', 'x^y', 'π', 'e', 'n!', '1/x'].includes(value)) performFunction(value);
     else inputDigit(value);
+  };
+
+  const performFunction = (func) => {
+    const value = parseFloat(display);
+    let result;
+
+    try {
+      switch (func) {
+        case 'sin':
+          result = sin(value * Math.PI / 180);
+          break;
+        case 'cos':
+          result = cos(value * Math.PI / 180);
+          break;
+        case 'tan':
+          result = tan(value * Math.PI / 180);
+          break;
+        case 'sqrt':
+          result = sqrt(value);
+          break;
+        case 'log':
+          result = log(value, 10);
+          break;
+        case 'ln':
+          result = ln(value);
+          break;
+        case 'exp':
+          result = exp(value);
+          break;
+        case 'x^y':
+          setOperation('^');
+          setPreviousValue(value);
+          setWaitingForOperand(true);
+          return;
+        case 'π':
+          result = pi;
+          break;
+        case 'e':
+          result = e;
+          break;
+        case 'n!':
+          result = evaluate(`${value}!`);
+          break;
+        case '1/x':
+          result = 1 / value;
+          break;
+      }
+
+      if (result !== undefined) {
+        setDisplay(result.toString());
+        setHistory([...history, `${func}(${value}) = ${result}`]);
+      }
+    } catch (error) {
+      setDisplay('Error');
+    }
   };
 
   return (
@@ -99,6 +161,19 @@ function Calculator() {
               <button
                 key={btn}
                 className={`btn ${btn === '0' ? 'zero' : ''} ${['+', '-', '*', '/', '='].includes(btn) ? 'operator' : ''} ${btn === '=' ? 'equals' : ''}`}
+                onClick={() => handleButton(btn)}
+              >
+                {btn}
+              </button>
+            ))}
+          </div>
+        ))}
+        {scientificButtons.map((row, rowIndex) => (
+          <div key={`sci-${rowIndex}`} className="button-row">
+            {row.map(btn => (
+              <button
+                key={btn}
+                className="btn function"
                 onClick={() => handleButton(btn)}
               >
                 {btn}
