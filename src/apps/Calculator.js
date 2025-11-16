@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { evaluate, sqrt, pow, sin, cos, tan, log, ln, exp, pi, e } from 'mathjs';
+import { evaluate, sqrt, sin, cos, tan, log, exp, pi, e } from 'mathjs';
+import { create, all } from 'mathjs';
+const math = create(all);
+const ln = math.log;
 
 function Calculator() {
   const [display, setDisplay] = useState('0');
