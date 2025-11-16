@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 function Notes() {
   const [notes, setNotes] = useState([]);
@@ -39,6 +41,10 @@ function Notes() {
       setCurrentNote(updated);
       setNotes(notes.map(n => n.id === currentNote.id ? updated : n));
     }
+  };
+
+  const handleContentChange = (content) => {
+    updateNote('content', content);
   };
 
   const deleteNote = () => {
@@ -97,10 +103,19 @@ function Notes() {
               onChange={(e) => updateNote('title', e.target.value)}
               placeholder="Note title"
             />
-            <textarea
+            <ReactQuill
               value={currentNote.content}
-              onChange={(e) => updateNote('content', e.target.value)}
+              onChange={handleContentChange}
               placeholder="Start writing..."
+              modules={{
+                toolbar: [
+                  [{ 'header': [1, 2, 3, false] }],
+                  ['bold', 'italic', 'underline', 'strike'],
+                  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                  ['link', 'image'],
+                  ['clean']
+                ],
+              }}
             />
             <button onClick={deleteNote}>Delete</button>
           </>

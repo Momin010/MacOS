@@ -1013,3 +1013,26 @@ body {
 .context-menu div:hover {
   background: #f0f0f0;
 }
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: nw-resize;
+  background: linear-gradient(-45deg, transparent 0%, transparent 30%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.1) 35%, transparent 35%, transparent 65%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.1) 70%, transparent 70%);
+}
+
+.react-resizable {
+  position: relative;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiM5OTk5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTUgNUgxdjFINS41VjE1SDF2LTFoNHYxem0xIDFINXYxSDF2LTFoMXYxem0xIDFINXYxSDF2LTFoMXYxem0xIDFINXYxSDF2LTFoMXYxem0xIDFINXYxSDF2LTFoMXYxeiIvPjwvZz4KPHN2Zz4=') no-repeat center;
+  cursor: nw-resize;
+}

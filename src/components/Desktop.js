@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 
 function Desktop({ onOpenApp }) {
   const apps = [
@@ -14,7 +15,9 @@ function Desktop({ onOpenApp }) {
     <div id="desktop">
       {apps.map(app => (
         <div key={app.name} className="desktop-icon" onClick={() => onOpenApp(app.name)}>
-          <img src={`/icons/${app.name}.png`} alt={app.label} />
+          <LazyLoad height={48} offset={100}>
+            <img src={`/icons/${app.name}.png`} alt={app.label} loading="lazy" />
+          </LazyLoad>
           <span>{app.label}</span>
         </div>
       ))}

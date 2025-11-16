@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { evaluate, sqrt, pow, sin, cos, tan, log, ln, exp, pi, e } from 'mathjs';
 
 function Calculator() {
   const [display, setDisplay] = useState('0');
@@ -57,12 +58,11 @@ function Calculator() {
   };
 
   const calculateResult = (firstValue, secondValue, operation) => {
-    switch (operation) {
-      case '+': return firstValue + secondValue;
-      case '-': return firstValue - secondValue;
-      case '*': return firstValue * secondValue;
-      case '/': return firstValue / secondValue;
-      default: return secondValue;
+    try {
+      const expression = `${firstValue} ${operation} ${secondValue}`;
+      return evaluate(expression);
+    } catch (error) {
+      return NaN;
     }
   };
 
