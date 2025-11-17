@@ -13,6 +13,11 @@ import Launchpad from './components/Launchpad';
 import Mail from './apps/Mail';
 import Photos from './apps/Photos';
 import Messages from './apps/Messages';
+import Calendar from './apps/Calendar';
+import Reminders from './apps/Reminders';
+import Maps from './apps/Maps';
+import Music from './apps/Music';
+import AppStore from './apps/AppStore';
 
 function App() {
   const [windows, setWindows] = useState([]);
@@ -57,6 +62,16 @@ function App() {
         return <Photos />;
       case 'messages':
         return <Messages />;
+      case 'calendar':
+        return <Calendar />;
+      case 'reminders':
+        return <Reminders />;
+      case 'maps':
+        return <Maps />;
+      case 'music':
+        return <Music />;
+      case 'appstore':
+        return <AppStore />;
       default:
         return <div>App not found</div>;
     }
