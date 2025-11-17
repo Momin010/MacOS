@@ -90,9 +90,9 @@ function Calendar() {
   return (
     <div className="calendar">
       <div className="calendar-header">
-        <button onClick={() => navigateMonth(-1)}><</button>
+        <button onClick={() => navigateMonth(-1)}>‹</button>
         <h2>{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
-        <button onClick={() => navigateMonth(1)}>></button>
+        <button onClick={() => navigateMonth(1)}>›</button>
         <div className="view-buttons">
           <button onClick={() => setView('month')} className={view === 'month' ? 'active' : ''}>Month</button>
           <button onClick={() => setView('week')} className={view === 'week' ? 'active' : ''}>Week</button>
