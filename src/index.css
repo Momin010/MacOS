@@ -1244,3 +1244,765 @@ body {
   color: #666;
   padding: 50px;
 }
+/* Messages Styles */
+.messages {
+  display: flex;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.conversations-list {
+  width: 300px;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+.conversation-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.conversation-item:hover {
+  background: #f8f9fa;
+}
+
+.conversation-item.active {
+  background: #007bff;
+  color: white;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.conversation-info {
+  flex: 1;
+}
+
+.contact-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.last-message {
+  font-size: 14px;
+  color: #666;
+}
+
+.conversation-meta {
+  text-align: right;
+}
+
+.time {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.unread-badge {
+  background: #dc3545;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+.chat-header .contact-name {
+  margin-left: 12px;
+  font-size: 18px;
+}
+
+.messages-list {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.message.received {
+  justify-content: flex-start;
+}
+
+.message-text {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 18px;
+  max-width: 300px;
+}
+
+.message.sent .message-text {
+  background: #007bff;
+}
+
+.message.received .message-text {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.message-time {
+  font-size: 10px;
+  color: #999;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.message-input {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.message-input button {
+  margin-left: 8px;
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.no-conversation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+/* Calendar Styles */
+.calendar {
+  display: flex;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.calendar-header button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.view-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.view-buttons button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-buttons button.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  flex: 1;
+}
+
+.day-header {
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.calendar-day {
+  min-height: 80px;
+  padding: 8px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+}
+
+.calendar-day.active:hover {
+  background: #f8f9fa;
+}
+
+.calendar-day.selected {
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.day-number {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.day-events {
+  font-size: 10px;
+}
+
+.event-preview {
+  background: #007bff;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more-events {
+  color: #666;
+  font-style: italic;
+}
+
+.calendar-sidebar {
+  width: 250px;
+  border-left: 1px solid #e0e0e0;
+  padding: 16px;
+  background: #f8f9fa;
+}
+
+.selected-date-info h3 {
+  margin-bottom: 16px;
+}
+
+.selected-date-info button {
+  width: 100%;
+  padding: 8px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.events-list h4 {
+  margin-bottom: 12px;
+  color: #495057;
+}
+
+.event-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.event-time {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.event-title {
+  margin-top: 4px;
+}
+
+/* Reminders Styles */
+.reminders {
+  display: flex;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.reminders-sidebar {
+  width: 200px;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  border-right: 1px solid #dee2e6;
+  padding: 16px;
+}
+
+.reminders-sidebar button {
+  width: 100%;
+  padding: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.lists {
+  margin-top: 16px;
+}
+
+.list-item {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.list-item.active {
+  background: #007bff;
+  color: white;
+}
+
+.reminders-content {
+  flex: 1;
+  padding: 16px;
+}
+
+.add-reminder {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.add-reminder input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.add-reminder button {
+  padding: 8px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reminders-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: #ffffff;
+}
+
+.reminder-item.completed {
+  background: #f8f9fa;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.reminder-item input[type="checkbox"] {
+  margin-right: 12px;
+}
+
+.reminder-text {
+  flex: 1;
+  font-size: 16px;
+}
+
+.due-date {
+  font-size: 12px;
+  color: #dc3545;
+  margin-left: 12px;
+}
+
+.reminder-item button {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 8px;
+}
+
+/* Maps Styles */
+.maps {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.maps-header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+}
+
+.maps-header input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 8px;
+}
+
+.maps-header button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.maps-content {
+  flex: 1;
+  display: flex;
+}
+
+.map-placeholder {
+  flex: 1;
+  position: relative;
+  background: #f8f9fa;
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: 100%;
+}
+
+.map-cell {
+  border: 1px solid #e0e0e0;
+  background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+}
+
+.current-location {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #dc3545;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.maps-sidebar {
+  width: 250px;
+  border-left: 1px solid #e0e0e0;
+  padding: 16px;
+  background: #f8f9fa;
+}
+
+.directions h3 {
+  margin-bottom: 12px;
+  color: #495057;
+}
+
+.route .step {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+/* Music Styles */
+.music {
+  display: flex;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.music-sidebar {
+  width: 200px;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  border-right: 1px solid #dee2e6;
+  padding: 16px;
+}
+
+.library-sections .section {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+
+.library-sections .section:hover {
+  background: #e0e0e0;
+}
+
+.music-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.music-toolbar {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.music-toolbar button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.songs-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.song-item:hover {
+  background: #f8f9fa;
+}
+
+.song-item.playing {
+  background: rgba(0, 123, 255, 0.1);
+  border-left: 4px solid #007bff;
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-title {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.song-artist {
+  font-size: 14px;
+  color: #666;
+}
+
+.song-duration {
+  font-size: 14px;
+  color: #999;
+}
+
+.music-player {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.player-controls button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.current-song {
+  text-align: center;
+}
+
+.current-song .song-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.current-song .song-artist {
+  font-size: 14px;
+  color: #666;
+}
+
+/* App Store Styles */
+.appstore {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.appstore-header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appstore-header input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.categories button {
+  padding: 6px 12px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.categories button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.apps-grid {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.app-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.app-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.app-info {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.app-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.app-category {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.app-rating {
+  font-size: 14px;
+  color: #ffc107;
+}
+
+.download-btn {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.download-btn:hover {
+  background: #0056b3;
+}
