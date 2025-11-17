@@ -12,6 +12,7 @@ import Settings from './apps/Settings';
 import Launchpad from './components/Launchpad';
 import Mail from './apps/Mail';
 import Photos from './apps/Photos';
+import Messages from './apps/Messages';
 
 function App() {
   const [windows, setWindows] = useState([]);
@@ -54,6 +55,8 @@ function App() {
         return <Mail />;
       case 'photos':
         return <Photos />;
+      case 'messages':
+        return <Messages />;
       default:
         return <div>App not found</div>;
     }

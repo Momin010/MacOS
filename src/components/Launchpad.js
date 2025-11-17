@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
+import {
+  FaSearch, FaCompass, FaCalculator, FaStickyNote, FaTerminal, FaCog,
+  FaEnvelope, FaCamera, FaComments, FaCalendarAlt, FaBell, FaMap,
+  FaMusic, FaTv, FaMicrophone, FaShoppingCart
+} from 'react-icons/fa';
 
 function Launchpad({ onOpenApp, onClose }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const apps = [
-    { name: 'finder', label: 'Finder', icon: '🔍' },
-    { name: 'safari', label: 'Safari', icon: '🌐' },
-    { name: 'calculator', label: 'Calculator', icon: '🧮' },
-    { name: 'notes', label: 'Notes', icon: '📝' },
-    { name: 'terminal', label: 'Terminal', icon: '💻' },
-    { name: 'settings', label: 'System Preferences', icon: '⚙️' },
-    { name: 'mail', label: 'Mail', icon: '✉️' },
-    { name: 'photos', label: 'Photos', icon: '📸' },
-    { name: 'messages', label: 'Messages', icon: '💬' },
-    { name: 'calendar', label: 'Calendar', icon: '📅' },
-    { name: 'reminders', label: 'Reminders', icon: '🔔' },
-    { name: 'maps', label: 'Maps', icon: '🗺️' },
-    { name: 'music', label: 'Music', icon: '🎵' },
-    { name: 'tv', label: 'TV', icon: '📺' },
-    { name: 'podcasts', label: 'Podcasts', icon: '🎙️' },
-    { name: 'appstore', label: 'App Store', icon: '🛒' }
+    { name: 'finder', label: 'Finder', icon: <FaSearch /> },
+    { name: 'safari', label: 'Safari', icon: <FaCompass /> },
+    { name: 'calculator', label: 'Calculator', icon: <FaCalculator /> },
+    { name: 'notes', label: 'Notes', icon: <FaStickyNote /> },
+    { name: 'terminal', label: 'Terminal', icon: <FaTerminal /> },
+    { name: 'settings', label: 'System Preferences', icon: <FaCog /> },
+    { name: 'mail', label: 'Mail', icon: <FaEnvelope /> },
+    { name: 'photos', label: 'Photos', icon: <FaCamera /> },
+    { name: 'messages', label: 'Messages', icon: <FaComments /> },
+    { name: 'calendar', label: 'Calendar', icon: <FaCalendarAlt /> },
+    { name: 'reminders', label: 'Reminders', icon: <FaBell /> },
+    { name: 'maps', label: 'Maps', icon: <FaMap /> },
+    { name: 'music', label: 'Music', icon: <FaMusic /> },
+    { name: 'tv', label: 'TV', icon: <FaTv /> },
+    { name: 'podcasts', label: 'Podcasts', icon: <FaMicrophone /> },
+    { name: 'appstore', label: 'App Store', icon: <FaShoppingCart /> }
   ];
 
   const filteredApps = apps.filter(app =>
